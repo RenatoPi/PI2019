@@ -1,0 +1,7 @@
+{
+    "php.validate.enable": true,
+    "php.validate.executablePath": "C:\\xampp\\php\\php.exe",
+    "files.autoSave": "afterDelay",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "code-runner.runInTerminal": true
+}
