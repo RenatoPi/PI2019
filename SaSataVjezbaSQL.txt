@@ -1,0 +1,92 @@
+SELECT * 
+FROM `orders`
+LIMIT 50;
+
+SELECT contactFirstName AS "Ime", contactLastName AS "Prezime", 
+CONCAT(addressLine1, " ", city, " ",  state, " ",  postalCode) AS "Adresa"
+FROM `customers` ;
+
+SELECT A.contactFirstName AS "Ime", A.contactLastName AS "Prezime", 
+CONCAT(A.addressLine1, " ",A.city, " ",  A.state, " ",  A.postalCode) AS "Adresa"
+FROM `customers`AS A ;
+
+SELECT c.customerName, o.orderDate, o.requiredDate
+FROM orders as o , customers as c 
+WHERE c.customerNumber=121 ;
+
+SELECT l.language, c.name AS Zemlja
+FROM country AS c, countrylanguage AS l
+WHERE c.code = l.CountryCode AND l.language="English" ;
+
+SELECT COUNT(*) 
+FROM country AS c, countrylanguage AS l 
+WHERE c.code = l.CountryCode AND l.language="English" ;
+
+SELECT *
+FROM orders AS o
+LEFT JOIN customers AS c
+ON o.customerNumber=c.customerNumber;
+
+SELECT c.customerNumber, c.customerName, o.orderNumber, o.status
+FROM orders AS o
+LEFT JOIN customers AS c
+ON o.customerNumber=c.customerNumber;
+
+SELECT productLine
+FROM products
+WHERE buyPrice > (SELECT buyPrice FROM products WHERE productName ="1993 Mazda RX-7") ;
+
+SELECT customerName, country
+FROM customers
+Where  customerNumber IN (SELECT customerNumber FROM payments WHERE paymentDate >  "2004-01-01") ;
+
+SELECT customerName, creditLimit
+FROM customers
+WHERE creditLimit > (SELECT AVG(creditLimit) FROM customers) ;
+
+SELECT productName, buyPrice, buyPrice*quantityInStock AS ukupno
+FROM products ;
+
+CREATE VIEW AustralijaJez AS
+	SELECT Language 
+	FROM countrylanguage
+	WHERE CountryCode="AUS" ;
+
+
+SELECT Anananananana as ANANANANANANA
+FROM ANE
+WHERE AnaKvadrat= Anananananananannanananannanananananannananananananananananananannananananananananan
+
+ANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANa
+ANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANa
+ANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANANa
+
+
+CREATE VIEW NewYorkZap AS
+SELECT lastName, firstName, jobTitle
+FROM employees
+WHERE officeCode=3 ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
